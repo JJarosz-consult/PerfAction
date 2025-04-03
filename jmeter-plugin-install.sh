@@ -7,6 +7,10 @@
 echo "Downloading CMDRunner"
 curl -L http://search.maven.org/remotecontent?filepath=kg/apc/cmdrunner/${JMETER_CMD_RUNNER_VERSION}/cmdrunner-${JMETER_CMD_RUNNER_VERSION}.jar --output ${JMETER_HOME}/lib/cmdrunner-${JMETER_CMD_RUNNER_VERSION}.jar
 
+# Install MongoDB libraries
+cd /opt/apache/apache-jmeter-${JMETER_VERSION}/lib/
+curl -L -O https://repo1.maven.org/maven2/org/mongodb/mongodb-driver-sync/5.4.0/mongodb-driver-sync-5.4.0.jar
+
 # Download Plugin Manager
 echo "Downloading Plugin Manager"
 curl -L https://jmeter-plugins.org/get/ --output ${JMETER_HOME}/lib/ext/jmeter-plugins-manager-${JMETER_PLUGIN_MANAGER_VERSION}.jar
@@ -17,10 +21,6 @@ java -cp /opt/apache/apache-jmeter-${JMETER_VERSION}/lib/ext/jmeter-plugins-mana
 # Install JMeter plugins
 cd /opt/apache/apache-jmeter-${JMETER_VERSION}/bin/
 java -jar ${JMETER_HOME}/lib/cmdrunner-${JMETER_CMD_RUNNER_VERSION}.jar --tool org.jmeterplugins.repository.PluginManagerCMD install ${JMETER_PLUGIN_INSTALL_LIST}
-
-# Install MongoDB libraries
-cd /opt/apache/apache-jmeter-${JMETER_VERSION}/lib/
-curl -L -O https://repo1.maven.org/maven2/org/mongodb/mongodb-driver-sync/5.4.0/mongodb-driver-sync-5.4.0.jar
 
 # Set execute permissions for JMeter shell scripts
 chmod a+x ${JMETER_HOME}/bin/*.sh
