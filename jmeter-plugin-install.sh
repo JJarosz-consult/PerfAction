@@ -18,5 +18,9 @@ java -cp /opt/apache/apache-jmeter-${JMETER_VERSION}/lib/ext/jmeter-plugins-mana
 cd /opt/apache/apache-jmeter-${JMETER_VERSION}/bin/
 java -jar ${JMETER_HOME}/lib/cmdrunner-${JMETER_CMD_RUNNER_VERSION}.jar --tool org.jmeterplugins.repository.PluginManagerCMD install ${JMETER_PLUGIN_INSTALL_LIST}
 
+# Install MongoDB libraries
+cd /opt/apache/apache-jmeter-${JMETER_VERSION}/lib/
+curl -L -O https://repo1.maven.org/maven2/org/mongodb/mongodb-driver-sync/5.4.0/mongodb-driver-sync-5.4.0.jar
+
 # Set execute permissions for JMeter shell scripts
 chmod a+x ${JMETER_HOME}/bin/*.sh
