@@ -10,6 +10,8 @@ curl -L http://search.maven.org/remotecontent?filepath=kg/apc/cmdrunner/${JMETER
 # Install MongoDB libraries
 cd /opt/apache/apache-jmeter-${JMETER_VERSION}/lib/
 curl -L -O https://repo1.maven.org/maven2/org/mongodb/mongodb-driver-sync/5.4.0/mongodb-driver-sync-5.4.0.jar
+curl -L -O https://repo1.maven.org/maven2/org/mongodb/mongodb-driver-core/5.4.0/mongodb-driver-core-5.4.0.jar
+curl -L -O https://repo1.maven.org/maven2/org/mongodb/bson/5.4.0/bson-5.4.0.jar
 
 # Download Plugin Manager
 echo "Downloading Plugin Manager"
