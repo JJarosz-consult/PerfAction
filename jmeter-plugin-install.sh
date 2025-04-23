@@ -8,6 +8,7 @@ echo "Downloading CMDRunner"
 curl -L http://search.maven.org/remotecontent?filepath=kg/apc/cmdrunner/${JMETER_CMD_RUNNER_VERSION}/cmdrunner-${JMETER_CMD_RUNNER_VERSION}.jar --output ${JMETER_HOME}/lib/cmdrunner-${JMETER_CMD_RUNNER_VERSION}.jar
 
 # Install MongoDB libraries
+echo "Downloading MongoDB libraries"
 cd /opt/apache/apache-jmeter-${JMETER_VERSION}/lib/
 rm -f mongo-java-driver-*.jar
 curl -L -O https://repo1.maven.org/maven2/org/mongodb/mongodb-driver-sync/5.4.0/mongodb-driver-sync-5.4.0.jar
